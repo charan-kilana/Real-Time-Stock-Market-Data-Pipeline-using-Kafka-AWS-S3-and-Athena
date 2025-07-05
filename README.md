@@ -130,6 +130,40 @@ bin/kafka-console-producer.sh --topic demo_test --bootstrap-server <your-ec2-pub
 ```
 ![Producer_Created](./assets/producer.png)
 
+
+## Step 9: Start Kafka Consumer
+
+- Open a **new terminal** and SSH into your EC2 instance again.
+- Navigate to the Kafka directory:
+
+```bash
+cd kafka_2.12-3.7.2
+bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server <your-ec2-public-ip>:9092
+# Replace <your-ec2-public-ip> with your instance public Ip
+```
+
+![Consumer_Created](./assets/consumer.png)
+
+## ✅ Step 10: Verify Producer-Consumer Communication
+
+- Type a few test messages in the **producer terminal**.
+- You should see those same messages appear instantly in the **consumer terminal**.
+
+> This confirms that the Kafka broker, topic, producer, and consumer are all working correctly.
+
+### Sample Output:
+
+| Producer Terminal                                   | Consumer Terminal                                   |
+|-----------------------------------------------------|-----------------------------------------------------|
+| Hello testing notification                          | Hello testing notification                          |
+| Wow From producer, consumer is receiving a notification | Wow From producer, consumer is receiving a notification |
+
+🖼️ *Below is a screenshot of the working setup:*
+
+![Kafka Producer-Consumer Test](./assets/connection.png)
+
+
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
