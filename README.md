@@ -10,7 +10,7 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
 ## Technology Used
 
-- **Programming Language**: **Python**
+- **Programming Language**: **Python** Jupyter Notebook
 
 - **Amazon Web Services (AWS)**:
   1. **S3 (Simple Storage Service)**
