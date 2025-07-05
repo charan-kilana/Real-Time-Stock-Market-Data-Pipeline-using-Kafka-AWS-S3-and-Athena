@@ -88,6 +88,23 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 
 ![Start Zookeeper](./assets/zookper_start.png)
 
+## Step 6: Start Kafka Server
+
+- Open **another terminal** and SSH into the EC2 instance again:
+```bash
+ssh -i <your-key.pem> ec2-user@<your-ec2-public-ip>
+```
+
+This sets the maximum (-Xmx) and minimum (-Xms) heap memory allocated to the Kafka JVM.
+It's helpful on low-memory machines (like t2.large) to avoid excessive resource usage.
+
+```bash
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+cd kafka_2.12-3.7.2
+bin/kafka-server-start.sh config/server.properties
+```
+![Start Server](./assets/kafka_server.png)
+
 
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
