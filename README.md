@@ -21,6 +21,23 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
 - **Apache Kafka**
 
+## 🚀 Step 1: Setting Up EC2 Instance
+
+- Launch an **Amazon EC2** instance using the **t2.large** instance type (Amazon Linux 2).
+- Configure the **security group**:
+  - Allow **All traffic** (inbound and outbound) — for development/testing purposes only.
+  - Make sure port `22` (SSH) is open so you can connect.
+
+ ![EC2_machine Diagram](./assets/ec2.png)
+
+
+
+
+
+
+
+
+
 
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
