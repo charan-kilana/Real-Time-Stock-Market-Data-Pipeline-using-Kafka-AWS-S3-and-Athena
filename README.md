@@ -215,6 +215,19 @@ producer = KafkaProducer(
 
 ![Producer_Connection](./assets/producer_connection.png)
 
+### Connect to Kafka (Consumer Side)
+
+In your `KafkaConsumer.ipynb`, initialize the Kafka consumer:
+
+```python
+consumer = KafkaConsumer(
+    'demo_test',
+    bootstrap_servers=['<your-ec2-public-ip>:9092'],  # Replace with your EC2 IP
+    value_deserializer=lambda x: loads(x.decode('utf-8'))
+)
+```
+![Consumer](./assets/consumer_connection.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
