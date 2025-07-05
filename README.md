@@ -86,6 +86,7 @@ Kafka requires **Zookeeper** to coordinate distributed brokers.
 bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
+![Start Zookeeper](./assets/zookper_start.png)
 
 
 ## Dataset Used
