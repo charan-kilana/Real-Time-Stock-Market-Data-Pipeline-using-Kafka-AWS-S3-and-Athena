@@ -241,9 +241,9 @@ To allow your local Python scripts (like the Kafka consumer) to interact with AW
 ### 🧾 Instructions:
 
 1. On your local machine, run:
-   ```bash
-   aws configure
-  ```
+```bash
+aws configure
+```
 ![aws_configure](./assets/aws_configure.png)
 
 ## Dataset Used
