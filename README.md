@@ -228,6 +228,12 @@ consumer = KafkaConsumer(
 ```
 ![Consumer](./assets/consumer_connection.png)
 
+## Step 14: Create an S3 Bucket
+
+Before consuming and storing Kafka data, create an **Amazon S3 bucket** to hold the JSON files.
+
+![Bucket_Creation](./assets/bucket_creation.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
