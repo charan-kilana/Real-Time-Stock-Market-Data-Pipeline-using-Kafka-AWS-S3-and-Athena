@@ -67,7 +67,7 @@ vi config/server.properties
 ```
 
 Find and uncomment or add the following line:
-- advertised.listeners=PLAINTEXT://<your-ec2-public-ip>:9092      // Add your public ip at **<your-ec2-public-ip>**
+- advertised.listeners=PLAINTEXT://**<your-ec2-public-ip>**:9092      # Add your public ip at **<your-ec2-public-ip>**
 
 ![Configure_Details](./assets/configure.png)
 
