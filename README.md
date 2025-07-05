@@ -162,6 +162,14 @@ bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server <your-ec2-pub
 
 ![Kafka Producer-Consumer Test](./assets/connection.png)
 
+## Step 11: Set Up Jupyter Notebook for Kafka Automation
+
+- Launch Jupyter Notebook on your local machine or a server:
+```bash
+jupyter notebook
+```
+![Python_Jupyter](./assets/jupyter_notebook.png)
+
 
 
 ## Dataset Used
