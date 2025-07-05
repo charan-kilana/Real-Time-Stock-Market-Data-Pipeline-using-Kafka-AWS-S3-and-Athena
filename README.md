@@ -106,6 +106,19 @@ bin/kafka-server-start.sh config/server.properties
 ![Start Server](./assets/kafka_server.png)
 
 
+## Step 7: Create a Kafka Topic
+
+- Open **another terminal window** and SSH into your EC2 instance again.
+
+- Navigate to the Kafka directory:
+```bash
+cd kafka_2.12-3.7.2
+bin/kafka-topics.sh --create --topic demo_test --bootstrap-server <your-ec2-public-ip>:9092 --replication-factor 1 --partitions 1
+# Replace <your-ec2-public-ip> with your instance public Ip
+```
+
+![Topic_Created](./assets/topic_created.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
