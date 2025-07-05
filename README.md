@@ -246,6 +246,15 @@ aws configure
 ```
 ![aws_configure](./assets/aws_configure.png)
 
+### Load Stock Data in Producer
+
+Before sending data to Kafka, read the stock market data CSV file using **Pandas**:
+
+```python
+df = pd.read_csv("indexProcessed.csv")
+```
+![Reading_CSV](./assets/read_csv.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
