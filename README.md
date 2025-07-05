@@ -75,6 +75,19 @@ advertised.listeners=PLAINTEXT://<your-ec2-public-ip>:9092  # Add your public IP
 ![Configure_Details](./assets/configure.png)
 
 
+## Step 5: Start Zookeeper
+
+Kafka requires **Zookeeper** to coordinate distributed brokers.
+
+- Make sure you're inside the extracted **Kafka directory**.
+
+- Start the Zookeeper server:
+```bash
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
