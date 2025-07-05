@@ -8,7 +8,7 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 ## Architecture 
 ![Architecture Diagram](./assets/Arch_diagram.png)
 
-## 🛠️ Technology Used
+## Technology Used
 
 - **Programming Language**: **Python**
 
@@ -21,7 +21,7 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
 - **Apache Kafka**
 
-## 🚀 Step 1: Setting Up EC2 Instance
+## Step 1: Setting Up EC2 Instance
 
 - Launch an **Amazon EC2** instance using the **t2.large** instance type (Amazon Linux 2).
 - Configure the **security group**:
@@ -30,9 +30,9 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
  ![EC2_machine Diagram](./assets/ec2.png)
 
-## 📦 Step 2: Download and Extract Kafka
+## Step 2: Download and Extract Kafka
 
-- Download the Kafka binary:
+- Download the Kafka binary from [Apache Kafka Downloads](https://downloads.apache.org/kafka/):
   ```bash
   wget https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz
   tar -xvf kafka_2.12-3.7.2.tgz
@@ -40,7 +40,7 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
  ![Download_and_untar](./assets/download_the_kafka.png)
 
-## ☕ Step 3: Install Java
+## Step 3: Install Java
 
 Kafka requires Java to run. Use the following commands to install and verify Java on your EC2 instance:
 
@@ -55,8 +55,21 @@ sudo yum install java-1.8.0-openjdk -y
 java -version
 ```
 
+## Step 4: Configure Kafka to Use EC2 Public IP
 
+Before starting **Zookeeper** or **Kafka**, make sure Kafka is not binding to the default private IP.
 
+- Edit the `server.properties` file to point Kafka to your EC2 **public IP**:    
+
+```bash
+cd kafka_2.12-3.7.2
+vi config/server.properties
+```
+
+Find and uncomment or add the following line:
+advertised.listeners=PLAINTEXT://<your-ec2-public-ip>:9092      // Add your public ip at **<your-ec2-public-ip>**
+
+![Configure_Details](./assets/configure.png)
 
 
 ## Dataset Used
