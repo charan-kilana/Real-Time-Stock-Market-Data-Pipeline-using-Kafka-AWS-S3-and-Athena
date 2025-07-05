@@ -170,6 +170,14 @@ jupyter notebook
 ```
 ![Python_Jupyter](./assets/jupyter_notebook.png)
 
+Create two new Jupyter notebooks for automating Kafka operations using Python:
+
+- **KafkaProducer.ipynb** — Simulates a Kafka producer that reads data from a CSV file and sends each record to a Kafka topic.
+
+- **KafkaConsumer.ipynb** — Consumes messages from the Kafka topic and performs actions such as storing the data in Amazon S3.
+
+> 🧠 These notebooks serve as the foundation for building a real-time streaming pipeline using Python and Kafka.
+
 
 
 ## Dataset Used
