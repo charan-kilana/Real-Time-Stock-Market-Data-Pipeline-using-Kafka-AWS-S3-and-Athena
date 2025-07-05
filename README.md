@@ -38,10 +38,22 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
   tar -xvf kafka_2.12-3.7.2.tgz
   ```
 
- ![Download and untar](./assets/download the kafka.png)
+ ![Download_and_untar](./assets/download_the_kafka.png)
 
+## ☕ Step 3: Install Java
 
+Kafka requires Java to run. Use the following commands to install and verify Java on your EC2 instance:
 
+```bash
+# Check if Java is already installed
+java -version
+
+# Install OpenJDK 1.8
+sudo yum install java-1.8.0-openjdk -y
+
+# Verify Java installation
+java -version
+```
 
 
 
