@@ -306,6 +306,53 @@ producer.flush()  # Clear data from Kafka producer buffer
   <img src="./assets/s2.png" width="45%" alt="Image 2"/>
 </p>
 
+## Step 17: Use AWS Glue Crawler and Athena for Querying
+
+### 🧭 Create and Run AWS Glue Crawler
+
+1. Go to the **AWS Glue Console** → **Crawlers** → Click **Add Crawler**.
+2. Set a name like `kafka-stock-crawler`.
+3. Choose **Data stores** as the source and point it to your S3 bucket:
+![Datasource](./assets/datasource.png)
+
+4. Choose **IAM Role** (create a new one if needed).
+- Create will Glue as service and give admin access
+![IAM_GLUE](./assets/IAM_glue.png)
+
+5. Set output database name (e.g., `stock_market_db`).
+![Creation_of_Database](./assets/database.png)
+6. Run the crawler.
+
+###  Run the Crawler
+
+Once the crawler is created and configured:
+
+- Go to the **Glue Console** → **Crawlers**.
+- Select your crawler (e.g., `kafka-stock-crawler`).
+- Click **Run** to start the crawling process.
+
+> 🕵️ The crawler will scan your S3 data, infer the schema, and create a table in the Glue Data Catalog under the selected database.
+
+### 🔍 Query the Crawled Data in Athena
+
+Once the Glue Crawler has finished running:
+
+1. Go to the **Amazon Athena Console**.
+2. In the left sidebar, select the database you specified in the crawler (e.g., `stock_market_db`).
+![Athena_Console](./assets/athena.png)
+
+4. Run a sample query:
+## Query-1
+```sql
+SELECT * FROM "stock_market_db"."stock_market_table" LIMIT 10;
+```
+![Query-1](./assets/query.png)
+
+## Query-2
+```sql
+SELECT count(*) FROM "stock_market_db"."stock_market_table" LIMIT 10;
+```
+![Query-2](./assets/query2.png)
 
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
