@@ -178,7 +178,40 @@ Create two new Jupyter notebooks for automating Kafka operations using Python:
 
 > 🧠 These notebooks serve as the foundation for building a real-time streaming pipeline using Python and Kafka.
 
+## Step 12: Import Required Python Libraries
 
+In your Jupyter notebooks, start by importing the required libraries.
+
+### KafkaProducer.ipynb
+
+```python
+import pandas as pd
+from kafka import KafkaProducer
+from time import sleep
+from json import dumps
+import json
+```
+### KafkaConsumer.ipynb
+```python
+from kafka import KafkaConsumer
+from time import sleep
+from json import dumps, loads
+import json
+from s3fs import S3FileSystem
+```
+
+![Libraries](./assets/libraries.png)
+
+### Connect to Kafka (Producer Side)
+
+In your `KafkaProducer.ipynb`, initialize the Kafka producer as shown:
+
+```python
+producer = KafkaProducer(
+    bootstrap_servers=['<your-ec2-public-ip>:9092'],  # Replace with your EC2 IP
+    value_serializer=lambda x: dumps(x).encode('utf-8')
+)
+```
 
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
