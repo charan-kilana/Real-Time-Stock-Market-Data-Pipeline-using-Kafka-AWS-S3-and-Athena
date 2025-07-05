@@ -30,7 +30,15 @@ We are going to use different technologies such as **Python**, **Amazon Web Serv
 
  ![EC2_machine Diagram](./assets/ec2.png)
 
+## 📦 Step 2: Download and Extract Kafka
 
+- Download the Kafka binary:
+  ```bash
+  wget https://downloads.apache.org/kafka/3.7.2/kafka_2.12-3.7.2.tgz
+  tar -xvf kafka_2.12-3.7.2.tgz
+  ```
+
+ ![Download and untar](./assets/download the kafka.png)
 
 
 
