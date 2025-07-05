@@ -234,6 +234,18 @@ Before consuming and storing Kafka data, create an **Amazon S3 bucket** to hold 
 
 ![Bucket_Creation](./assets/bucket_creation.png)
 
+## Step 15: Configure AWS CLI on Local Machine
+
+To allow your local Python scripts (like the Kafka consumer) to interact with AWS services such as S3, configure AWS CLI with your credentials.
+
+### 🧾 Instructions:
+
+1. On your local machine, run:
+   ```bash
+   aws configure
+  ```
+![aws_configure](./assets/aws_configure.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
