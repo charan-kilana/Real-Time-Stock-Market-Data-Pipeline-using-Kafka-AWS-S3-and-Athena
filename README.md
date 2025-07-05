@@ -255,6 +255,58 @@ df = pd.read_csv("indexProcessed.csv")
 ```
 ![Reading_CSV](./assets/read_csv.png)
 
+## Step 16: Send and Store Streamed Data
+
+### Send Data from KafkaProducer
+
+Stream one random stock record per second to the Kafka topic `demo_test`:
+
+```python
+while True:
+    dict_stock = df.sample(1).to_dict(orient="records")[0]
+    producer.send('demo_test', value=dict_stock)
+    sleep(1)
+```
+![producer_send](./assets/producer_send.png)
+
+- `df.sample(1)`: Picks one random row from the DataFrame.
+- Converts it to a dictionary and sends it as a JSON message to Kafka every second.
+
+### 📥 Receive Data with KafkaConsumer and Store in S3
+
+Use `s3fs` to write each incoming Kafka message as a `.json` file in the S3 bucket:
+
+```python
+s3 = S3FileSystem()
+```
+![S3_FileSystem](./assets/s3filesystem.png)
+
+- Each message is written as a unique JSON file named `stock_market_<count>.json`.
+- Make sure the S3 bucket name `kafka-stock-market-tutorial-youtube-darshil` exists and matches your actual bucket name.
+
+```python
+for count, i in enumerate(consumer):
+    with s3.open("s3://my-kafka-bucket-charan/stock_market_{}.json".format(count), 'w') as file:
+        json.dump(i.value, file)
+```
+![S3_FileSystem](./assets/consumer_s3_code.png)
+
+#### Note:
+### 🛑 Stopping the Producer
+
+Once all messages are sent and stored in S3, you can stop the producer gracefully by flushing any remaining messages in the buffer:
+
+```python
+producer.flush()  # Clear data from Kafka producer buffer
+```
+
+<p align="center">
+  <img src="./assets/s1.png" width="45%" alt="Image 1"/>
+  &nbsp;&nbsp;
+  <img src="./assets/s2.png" width="45%" alt="Image 2"/>
+</p>
+
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
