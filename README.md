@@ -213,6 +213,8 @@ producer = KafkaProducer(
 )
 ```
 
+![Producer_Connection](./assets/producer_connection.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
