@@ -119,6 +119,17 @@ bin/kafka-topics.sh --create --topic demo_test --bootstrap-server <your-ec2-publ
 
 ![Topic_Created](./assets/topic_created.png)
 
+## Step 8: Start Kafka Producer
+
+In the **same terminal** where you created the topic:
+
+- Start the Kafka console producer:
+```bash
+bin/kafka-console-producer.sh --topic demo_test --bootstrap-server <your-ec2-public-ip>:9092
+# Replace <your-ec2-public-ip> with your instance public Ip
+```
+![Producer_Created](./assets/producer.png)
+
 ## Dataset Used
 You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
 
