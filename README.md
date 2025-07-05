@@ -354,12 +354,9 @@ SELECT count(*) FROM "stock_market_db"."stock_market_table" LIMIT 10;
 ```
 ![Query-2](./assets/query2.png)
 
-## Dataset Used
-You can use any dataset, we are mainly interested in operation side of Data Engineering (building data pipeline) 
+### Dataset Used
 
-Here is the dataset used in the video - https://github.com/darshilparmar/stock-market-kafka-data-engineering-project/blob/main/indexProcessed.csv
+The dataset used in this project can be found here:
 
+🔗 [indexProcessed.csv](https://github.com/charan-kilana/Real-Time-Stock-Market-Data-Pipeline-using-Kafka-AWS-S3-and-Athena/blob/main/indexProcessed.csv)
 
-## Complete Video Tutorial 
-
-Video Link - https://www.youtube.com/embed/KerNf0NANMo
